@@ -292,6 +292,7 @@ body {
     justify-content: space-around;
     /* padding: 10px; */
     width: 100%;
+    margin: 0px auto;
   }
 
   .locationDate {
@@ -604,7 +605,7 @@ body {
     align-items: center;
     padding: 10px 2%;
     border-radius: 5px;
-    background-color: red;
+    /* background-color: red; */
   }
 
   .location {
