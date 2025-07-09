@@ -42,30 +42,8 @@ function Weather() {
     // console.log(selectedData);
     setSelectedData(data?.forecast?.forecastday[index]);
     setSelectedDate(data?.forecast?.forecastday[index].date);
-    // console.log(selectedData?.day?.hour[0]?.cloud);
     // console.log(selectedData?.hour?.[0]?.cloud ?? "Cloud data not available");
   };
-
-  const icons = {
-    Clear: "https://cdn-icons-png.flaticon.com/512/3222/3222807.png",
-    "Few clouds": "https://cdn-icons-png.flaticon.com/512/414/414825.png",
-    "Scattered clouds": "https://cdn-icons-png.flaticon.com/512/414/414825.png",
-    "Broken clouds": "https://cdn-icons-png.flaticon.com/512/414/414825.png",
-    "Overcast clouds": "https://cdn-icons-png.flaticon.com/512/414/414825.png",
-    "Light rain":
-      "https://github.com/uginemedia/Build-a-complete-weather-application-in-react-js/blob/master/src/assets/rain.png?raw=true",
-    "Moderate rain":
-      "https://github.com/uginemedia/Build-a-complete-weather-application-in-react-js/blob/master/src/assets/rain.png?raw=true",
-    "Heavy rain":
-      "https://github.com/uginemedia/Build-a-complete-weather-application-in-react-js/blob/master/src/assets/rain.png?raw=true",
-    Thunderstorm: "https://cdn-icons-png.flaticon.com/512/1779/1779940.png",
-    Snow: "https://cdn-icons-png.flaticon.com/512/642/642102.png",
-    Mist: "https://cdn-icons-png.flaticon.com/512/4005/4005901.png",
-    Fog: "https://cdn-icons-png.flaticon.com/512/4005/4005901.png",
-  };
-
-  let weatherType = data?.forecast?.forecastday[0]?.day?.condition?.text;
-  let weatherIcon = icons[weatherType] || icons["Clear"]; // fallback to Clear if not found
   const getDay = (e) => {
     let day = new Date(e);
     let a = day.getDay(day);
@@ -91,6 +69,7 @@ function Weather() {
       return "Sunday";
     }
   };
+
   return (
     <>
       <div>
@@ -126,8 +105,8 @@ function Weather() {
               <div className="box1">
                 <div style={{ marginTop: "15px" }}>
                   <img
-                    // src={data?.forecast?.forecastday[0]?.day?.condition?.icon}
-                    src={weatherIcon}
+                    src={selectedData?.day?.condition?.icon}
+                    // src={weatherIcon}
                     className="img"
                   />
                 </div>
@@ -425,8 +404,8 @@ function Weather() {
                   >
                     <div>
                       <img
-                        src="https://cdn-icons-png.flaticon.com/128/3845/3845731.png"
-                        style={{ width: "50px" }}
+                        src={item?.day?.condition?.icon}
+                        style={{ width: "60px" }}
                       />
                     </div>
                     <div>
@@ -434,7 +413,7 @@ function Weather() {
                         <h3>{getDay(item.date)}</h3>
                       </div>
                       <div>
-                        <h5></h5>
+                        <h5>{item.date}</h5>
                       </div>
                     </div>
                     <div>
