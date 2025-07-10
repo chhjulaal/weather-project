@@ -80,7 +80,7 @@ function Weather() {
               src="https://cdn-icons-png.flaticon.com/128/14453/14453595.png"
               style={{ width: "20px" }}
             />
-            <span style={{ color: "white" }}>Location Uk</span>
+            <span style={{ color: "white" }}>{city}</span>
           </div>
           <div className="searchCity">
             <input
@@ -94,9 +94,9 @@ function Weather() {
               style={{ width: "25px" }}
             />
           </div>
-          <div className="calender">
+          {/* <div className="calender">
             <FaCalendar style={{ color: "white" }}></FaCalendar>
-          </div>
+          </div> */}
         </div>
         {/*  main content start here */}
         <div className="hero">
